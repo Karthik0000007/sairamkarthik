@@ -183,8 +183,8 @@ Profile photo (`ME.jpg`) is served from the same origin. Trade-off: no automatic
 
 ```bash
 # Clone the repository
-git clone https://github.com/Karthik0000007/portfolio.git
-cd portfolio
+git clone https://github.com/Karthik0000007/sairamkarthik.git
+cd sairamkarthik
 
 # Open in browser — no build step, no server required
 start index.html          # Windows
