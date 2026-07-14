@@ -921,10 +921,8 @@
     </style>
 </head>
 <body>
-    <!-- Accessibility: skip link -->
     <a href="#main" class="skip-link">Skip to main content</a>
 
-    <!-- ===== NAVIGATION ===== -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="container">
             <a href="#" class="nav-brand">
@@ -949,10 +947,8 @@
         </div>
     </nav>
 
-    <!-- ===== MAIN CONTENT ===== -->
     <main id="main">
 
-        <!-- ===== HERO ===== -->
         <section class="hero">
             <div class="container">
                 <div class="hero-inner">
@@ -988,7 +984,6 @@
             </div>
         </section>
 
-        <!-- ===== ENGINEERING PHILOSOPHY ===== -->
         <section id="philosophy" class="section">
             <div class="container">
                 <div class="section-header fade-up">
@@ -1016,61 +1011,60 @@
             </div>
         </section>
 
-        <!-- ===== PROJECTS ===== -->
         <section id="projects" class="section">
             <div class="container">
                 <div class="section-header fade-up">
                     <span class="section-label" data-i18n="proj-label">Systems I've Built</span>
                     <h2 class="section-title" data-i18n="proj-title">Projects</h2>
-                    <p class="section-subtitle" data-i18n="proj-subtitle">Production-oriented systems with documented trade-offs and measurable outcomes.</p>
+                    <p class="section-subtitle" data-i18n="proj-subtitle">Production-oriented systems with documented trade-offs, enterprise privacy compliance, and measurable outcomes.</p>
                 </div>
 
-                <!-- Project 1: Event Analytics Platform -->
                 <div class="projects-grid">
                     <article class="project-card fade-up">
                         <div class="project-top">
-                            <h3 data-i18n="p1-title">Event Analytics Platform — Event-Driven Ingestion Pipeline with Failure Isolation</h3>
+                            <h3 data-i18n="p1-title">Kizuna — Multimodal Privacy-Preserving Edge AI Platform</h3>
                         </div>
-                        <p class="project-context" data-i18n="p1-ctx">Personal Project · Go + Kafka + PostgreSQL</p>
-                        <p class="project-description" data-i18n="p1-desc">Production-grade event-driven data ingestion pipeline designed for correctness under failure. Implements at-least-once delivery with idempotent persistence, intelligent error classification, bounded retry with exponential backoff, and dead-letter queue isolation — all with manual Kafka offset control for crash-safe guarantees.</p>
+                        <p class="project-context" data-i18n="p1-ctx">Personal / Research Project · ONNX Runtime + Docker + Qdrant / FAISS</p>
+                        <p class="project-description" data-i18n="p1-desc">Privacy-preserving multimodal AI platform engineered for edge deployment where raw sensor data (video, audio, environmental) cannot be transmitted to the cloud. Converts heterogeneous streams into anonymized vector embeddings at the edge, applying differential privacy and immediate raw data destruction to ensure APPI (Japan Personal Information Protection Act) compliance.</p>
                         <ul class="project-highlights" style="list-style: disc;">
-                            <li data-i18n="p1-h1">At-least-once delivery with manual offset commits — offsets committed only after successful DB write or DLQ routing; uncommitted messages redelivered on consumer restart</li>
-                            <li data-i18n="p1-h2">Idempotent persistence via INSERT ... ON CONFLICT DO NOTHING — duplicate replays are safe by design</li>
-                            <li data-i18n="p1-h3">Intelligent error classification: transient (exponential backoff + jitter), permanent (immediate DLQ routing), unknown (defaults to transient to avoid data loss)</li>
-                            <li data-i18n="p1-h4">Dead Letter Queue with full forensic metadata: original key/value/offset, error classification, retry count, failure timestamp</li>
+                            <li data-i18n="p1-h1">Edge-native embedding architecture: converts raw video, audio, and motion data into a unified multimodal embedding space locally using quantized ONNX Runtime models</li>
+                            <li data-i18n="p1-h2">Zero raw data exfiltration: raw files are immediately purged from memory post-embedding; only anonymized vectors are queried against local Qdrant/FAISS databases</li>
+                            <li data-i18n="p1-h3">Real-time similarity &amp; anomaly detection: performs vector similarity search to flag operational anomalies without cloud latency or external dependency</li>
+                            <li data-i18n="p1-h4">APPI-compliant privacy layer: incorporates differential privacy noise injection and memory-wiping mechanisms designed specifically for Japanese enterprise security standards</li>
                         </ul>
                         <div class="project-results">
                             <div class="result-item">
-                                <span class="result-value" data-i18n="p1-rv1">27</span>
-                                <span class="result-label" data-i18n="p1-rl1">Passing tests</span>
+                                <span class="result-value" data-i18n="p1-rv1">Edge-Native</span>
+                                <span class="result-label" data-i18n="p1-rl1">Deployment</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-value" data-i18n="p1-rv2">3</span>
-                                <span class="result-label" data-i18n="p1-rl2">Error classes</span>
+                                <span class="result-value" data-i18n="p1-rv2">Zero-Cloud</span>
+                                <span class="result-label" data-i18n="p1-rl2">Data Exfiltration</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-value" data-i18n="p1-rv3">Crash-safe</span>
-                                <span class="result-label" data-i18n="p1-rl3">Shutdown handling</span>
+                                <span class="result-value" data-i18n="p1-rv3">APPI-Ready</span>
+                                <span class="result-label" data-i18n="p1-rl3">Privacy Compliance</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-value" data-i18n="p1-rv4">At-least-once</span>
-                                <span class="result-label" data-i18n="p1-rl4">Delivery guarantee</span>
+                                <span class="result-value" data-i18n="p1-rv4">INT8 Quantized</span>
+                                <span class="result-label" data-i18n="p1-rl4">ONNX Inference</span>
                             </div>
                         </div>
                         <div class="project-footer">
                             <div class="tech-pills">
-                                <span class="tech-pill">Go</span>
-                                <span class="tech-pill">Apache Kafka</span>
-                                <span class="tech-pill">PostgreSQL</span>
+                                <span class="tech-pill">Python</span>
+                                <span class="tech-pill">ONNX Runtime</span>
                                 <span class="tech-pill">Docker</span>
+                                <span class="tech-pill">Qdrant</span>
+                                <span class="tech-pill">FAISS</span>
+                                <span class="tech-pill">Differential Privacy</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://github.com/Karthik0000007/Event_Analytics_Platform" target="_blank"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://github.com/Karthik0000007/kizuna-multimodal-privacy-engine" target="_blank"><i class="fab fa-github"></i> Code</a>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Project 2: Risk Scoring System -->
                     <article class="project-card fade-up">
                         <div class="project-top">
                             <h3 data-i18n="p2-title">Content Risk Scoring Service — Stateless Inference Microservice with Graceful Degradation</h3>
@@ -1116,102 +1110,143 @@
                         </div>
                     </article>
 
-                    <!-- Project 3: AI Studio Cam -->
                     <article class="project-card fade-up">
                         <div class="project-top">
-                            <h3 data-i18n="p3-title">AI Studio Cam — Real-Time Vision Service with Semantic Memory &amp; Runtime Model Switching</h3>
+                            <h3 data-i18n="p3-title">Event Analytics Platform — Event-Driven Ingestion Pipeline with Failure Isolation</h3>
                         </div>
-                        <p class="project-context" data-i18n="p3-ctx">Research Project · Under Dr. Anirban Bhar</p>
-                        <p class="project-description" data-i18n="p3-desc">Real-time AI-powered visual memory system with dual-model detection, CLIP-based semantic search over a FAISS vector index, and voice-driven interaction. Supports runtime model hot-swapping between YOLOv8 (80+ classes) and custom CNN (10 specialized classes) without service restart.</p>
+                        <p class="project-context" data-i18n="p3-ctx">Personal Project · Go + Kafka + PostgreSQL</p>
+                        <p class="project-description" data-i18n="p3-desc">Production-grade event-driven data ingestion pipeline designed for correctness under failure. Implements at-least-once delivery with idempotent persistence, intelligent error classification, bounded retry with exponential backoff, and dead-letter queue isolation — all with manual Kafka offset control for crash-safe guarantees.</p>
                         <ul class="project-highlights" style="list-style: disc;">
-                            <li data-i18n="p3-h1">Dual model support: YOLOv8 for general detection + custom CNN for specialized classes — switchable at runtime without restart</li>
-                            <li data-i18n="p3-h2">CLIP-based semantic memory with FAISS index: supports natural language queries ("show me something like a red cup") and time-based recall</li>
-                            <li data-i18n="p3-h3">Full voice interface via Whisper STT + TTS for hands-free operation — object search, snapshot capture, model switching, memory management</li>
-                            <li data-i18n="p3-h4">CNN training pipeline with Optuna hyperparameter optimization, data augmentation, confusion matrix evaluation, and automated model persistence</li>
+                            <li data-i18n="p3-h1">At-least-once delivery with manual offset commits — offsets committed only after successful DB write or DLQ routing; uncommitted messages redelivered on consumer restart</li>
+                            <li data-i18n="p3-h2">Idempotent persistence via INSERT ... ON CONFLICT DO NOTHING — duplicate replays are safe by design</li>
+                            <li data-i18n="p3-h3">Intelligent error classification: transient (exponential backoff + jitter), permanent (immediate DLQ routing), unknown (defaults to transient to avoid data loss)</li>
+                            <li data-i18n="p3-h4">Dead Letter Queue with full forensic metadata: original key/value/offset, error classification, retry count, failure timestamp</li>
                         </ul>
                         <div class="project-results">
                             <div class="result-item">
-                                <span class="result-value" data-i18n="p3-rv1">30–70ms</span>
-                                <span class="result-label" data-i18n="p3-rl1">Inference latency</span>
+                                <span class="result-value" data-i18n="p3-rv1">27</span>
+                                <span class="result-label" data-i18n="p3-rl1">Passing tests</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-value" data-i18n="p3-rv2">94%</span>
-                                <span class="result-label" data-i18n="p3-rl2">mAP accuracy</span>
+                                <span class="result-value" data-i18n="p3-rv2">3</span>
+                                <span class="result-label" data-i18n="p3-rl2">Error classes</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-value" data-i18n="p3-rv3">Semantic</span>
-                                <span class="result-label" data-i18n="p3-rl3">Visual search</span>
+                                <span class="result-value" data-i18n="p3-rv3">Crash-safe</span>
+                                <span class="result-label" data-i18n="p3-rl3">Shutdown handling</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-value" data-i18n="p3-rv4">Voice-driven</span>
-                                <span class="result-label" data-i18n="p3-rl4">Interaction</span>
+                                <span class="result-value" data-i18n="p3-rv4">At-least-once</span>
+                                <span class="result-label" data-i18n="p3-rl4">Delivery guarantee</span>
                             </div>
                         </div>
                         <div class="project-footer">
                             <div class="tech-pills">
-                                <span class="tech-pill">Python</span>
-                                <span class="tech-pill">YOLOv8</span>
-                                <span class="tech-pill">CLIP</span>
-                                <span class="tech-pill">FAISS</span>
-                                <span class="tech-pill">Whisper</span>
-                                <span class="tech-pill">PyTorch</span>
-                                <span class="tech-pill">MongoDB</span>
-                                <span class="tech-pill">Optuna</span>
+                                <span class="tech-pill">Go</span>
+                                <span class="tech-pill">Apache Kafka</span>
+                                <span class="tech-pill">PostgreSQL</span>
+                                <span class="tech-pill">React</span>
+                                <span class="tech-pill">Docker</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://github.com/Karthik0000007/AI-Studio-Cam" target="_blank"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://github.com/Karthik0000007/Event_Analytics_Platform" target="_blank"><i class="fab fa-github"></i> Code</a>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Project 5: Japanese Language Trainer -->
                     <article class="project-card fade-up">
                         <div class="project-top">
-                            <h3 data-i18n="p5-title">Offline AI Japanese Language Trainer — Full-Stack SRS App with Local LLM Tutor</h3>
+                            <h3 data-i18n="p4-title">Session-Adaptive News Recommendation Engine — High-Speed Vector Retrieval &amp; Ranking</h3>
                         </div>
-                        <p class="project-context" data-i18n="p5-ctx">Personal Project · FastAPI + PostgreSQL + Ollama</p>
-                        <p class="project-description" data-i18n="p5-desc">Fully offline, privacy-first Japanese language learning application with SM-2 spaced repetition built from scratch, complete JLPT vocabulary/kanji browser (N5–N1), and a 5-mode AI tutor powered by local LLaMA 3.1 70B inference. Zero cloud dependencies — nothing leaves the machine.</p>
+                        <p class="project-context" data-i18n="p4-ctx">Personal Project · FastAPI + FAISS + LightGBM + Redis</p>
+                        <p class="project-description" data-i18n="p4-desc">AI-ready data retrieval and ranking engine processing over 160,000 article records. Designed for enterprise information democratization, dynamically adapting content ranking based on session interaction patterns. Implements in-memory caching and vector similarity search under strict sub-150ms P99 latency constraints.</p>
                         <ul class="project-highlights" style="list-style: disc;">
-                            <li data-i18n="p5-h1">SM-2 spaced repetition engine from scratch: Again/Hard/Good/Easy grading, daily new-card caps, streak tracking, mastery progression across all JLPT levels</li>
-                            <li data-i18n="p5-h2">5-mode AI tutor (TEACH · QUIZ · EXPLAIN · CORRECT · CHAT) — intentionally refuses to simply translate; teaches through interaction</li>
-                            <li data-i18n="p5-h3">Async FastAPI backend with 15+ RESTful endpoints, SSE-streamed AI responses, Alembic migrations, SQLModel ORM</li>
-                            <li data-i18n="p5-h4">Offline TTS via Piper for Japanese pronunciation; progress dashboard with 7-day review forecast and per-level mastery metrics</li>
+                            <li data-i18n="p4-h1">160,000+ record retrieval engine: implements FAISS vector similarity search for instant Top-100 candidate extraction from behavioral session data</li>
+                            <li data-i18n="p4-h2">Dynamic LightGBM ranking pipeline: executes real-time feature engineering over click/view histories to serve personalized content scoring</li>
+                            <li data-i18n="p4-h3">Sub-150ms P99 latency architecture: structured data delivery layer built with async FastAPI and Redis in-memory caching to prevent database bottlenecks</li>
+                            <li data-i18n="p4-h4">4 integrated recommendation strategies: combines collaborative filtering, content similarity, recent interaction decay, and popularity baselines</li>
                         </ul>
                         <div class="project-results">
                             <div class="result-item">
-                                <span class="result-value" data-i18n="p5-rv1">15+</span>
-                                <span class="result-label" data-i18n="p5-rl1">API endpoints</span>
+                                <span class="result-value" data-i18n="p4-rv1">160k+</span>
+                                <span class="result-label" data-i18n="p4-rl1">Records indexed</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-value" data-i18n="p5-rv2">SM-2</span>
-                                <span class="result-label" data-i18n="p5-rl2">SRS engine</span>
+                                <span class="result-value" data-i18n="p4-rv2">&lt;150ms</span>
+                                <span class="result-label" data-i18n="p4-rl2">P99 latency</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-value" data-i18n="p5-rv3">5 modes</span>
-                                <span class="result-label" data-i18n="p5-rl3">AI tutor</span>
+                                <span class="result-value" data-i18n="p4-rv3">4 Strategies</span>
+                                <span class="result-label" data-i18n="p4-rl3">Adaptive ranking</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-value" data-i18n="p5-rv4">Fully offline</span>
-                                <span class="result-label" data-i18n="p5-rl4">Architecture</span>
+                                <span class="result-value" data-i18n="p4-rv4">FAISS + Redis</span>
+                                <span class="result-label" data-i18n="p4-rl4">High-speed retrieval</span>
                             </div>
                         </div>
                         <div class="project-footer">
                             <div class="tech-pills">
                                 <span class="tech-pill">Python</span>
                                 <span class="tech-pill">FastAPI</span>
-                                <span class="tech-pill">PostgreSQL</span>
-                                <span class="tech-pill">Ollama</span>
-                                <span class="tech-pill">Piper TTS</span>
-                                <span class="tech-pill">Alembic</span>
+                                <span class="tech-pill">FAISS</span>
+                                <span class="tech-pill">LightGBM</span>
+                                <span class="tech-pill">Redis</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://github.com/Karthik0000007/AI-Japanese-Learning-App" target="_blank"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://github.com/Karthik0000007/session-adaptive-news-ranker" target="_blank"><i class="fab fa-github"></i> Code</a>
                             </div>
                         </div>
                     </article>
 
+                    <!-- Project 5: KAI (Standalone Enterprise DX Assistant) -->
+                    <article class="project-card fade-up">
+                        <div class="project-top">
+                            <h3 data-i18n="p5-title">KAI — Privacy-Conscious Offline AI Assistant</h3>
+                        </div>
+                        <p class="project-context" data-i18n="p5-ctx">Personal Project · Python + Whisper + Local LLM + Vector Storage</p>
+                        <p class="project-description" data-i18n="p5-desc">Privacy-first offline AI productivity assistant designed to enable natural interaction through voice and multimodal inputs while keeping sensitive workflow information locally controlled. Eliminates external cloud dependencies to address enterprise data leakage concerns during AI adoption.</p>
+                        <ul class="project-highlights" style="list-style: disc;">
+                            <li data-i18n="p5-h1">Multimodal input processing: integrates Whisper speech-to-text and vision models for hands-free voice and document interaction</li>
+                            <li data-i18n="p5-h2">100% local AI processing: executes LLM inference locally on-device, ensuring zero data exfiltration to third-party cloud APIs</li>
+                            <li data-i18n="p5-h3">Contextual local memory: integrates a local vector storage layer for persistent document retrieval and conversational memory without external database exposure</li>
+                            <li data-i18n="p5-h4">Enterprise DX alignment: engineered specifically to evaluate how organizations can securely adopt generative AI productivity assistants under strict data privacy constraints</li>
+                        </ul>
+                        <div class="project-results">
+                            <div class="result-item">
+                                <span class="result-value" data-i18n="p5-rv1">Zero-Cloud</span>
+                                <span class="result-label" data-i18n="p5-rl1">Data exfiltration</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-value" data-i18n="p5-rv2">Voice / Text</span>
+                                <span class="result-label" data-i18n="p5-rl2">Multimodal input</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-value" data-i18n="p5-rv3">Local Storage</span>
+                                <span class="result-label" data-i18n="p5-rl3">Context retention</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-value" data-i18n="p5-rv4">Privacy-First</span>
+                                <span class="result-label" data-i18n="p5-rl4">DX readiness</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="tech-pills">
+                                <span class="tech-pill">Python</span>
+                                <span class="tech-pill">Local LLM</span>
+                                <span class="tech-pill">Whisper</span>
+                                <span class="tech-pill">Vector Storage</span>
+                                <span class="tech-pill">Multimodal AI</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Karthik0000007/KAI" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-        <!-- ===== EXPERIENCE & EDUCATION ===== -->
+
         <section id="experience" class="section">
             <div class="container">
                 <div class="section-header fade-up">
@@ -1220,7 +1255,6 @@
                 </div>
 
                 <div class="exp-education-grid">
-                    <!-- Experience Timeline -->
                     <div class="fade-up">
                         <h3 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 28px;" data-i18n="exp-sub-label">Experience</h3>
                         <div class="timeline">
@@ -1228,7 +1262,7 @@
                                 <div class="timeline-dot"></div>
                                 <div class="timeline-header">
                                     <span class="timeline-role" data-i18n="exp1-role">Research — Constrained RL for Edge Inference</span>
-                                    <span class="timeline-date" data-i18n="exp1-date">Mar – Apr 2026</span>
+                                    <span class="timeline-date" data-i18n="exp1-date">Feb – Apr 2026</span>
                                 </div>
                                 <div class="timeline-org" data-i18n="exp1-org">Under Dr. Raushan Kumar Singh · SRM University, AP</div>
                                 <div class="timeline-body">
@@ -1256,7 +1290,7 @@
                                 <div class="timeline-org" data-i18n="exp2-org">AI Studio Cam · Under Dr. Anirban Bhar</div>
                                 <div class="timeline-body">
                                     <ul>
-                                        <li data-i18n="exp2-b1">Operated latency-constrained vision pipeline with hybrid detection (YOLOv8 + CNN) under <50ms p95 SLA</li>
+                                        <li data-i18n="exp2-b1">Operated latency-constrained vision pipeline with hybrid detection (YOLOv8 + CNN) under &lt;50ms p95 SLA</li>
                                         <li data-i18n="exp2-b2">Built FAISS-backed retrieval layer with 3ms query latency and graceful degradation on component failure</li>
                                         <li data-i18n="exp2-b3">Instrumented monitoring: confidence tracking, latency alerting, automated fallback to YOLOv8-only mode</li>
                                     </ul>
@@ -1278,7 +1312,7 @@
                                 <div class="timeline-org" data-i18n="exp3-org">NULLCLASS</div>
                                 <div class="timeline-body">
                                     <ul>
-                                        <li data-i18n="exp3-b1">Built streaming data pipeline (Kafka → Spark → PostgreSQL + Redis) with <30s data freshness guarantee</li>
+                                        <li data-i18n="exp3-b1">Built streaming data pipeline (Kafka → Spark → PostgreSQL + Redis) with &lt;30s data freshness guarantee</li>
                                         <li data-i18n="exp3-b2">Designed Redis caching layer: dashboard p95 load dropped from 1.2s to 180ms</li>
                                         <li data-i18n="exp3-b3">Implemented Kafka replay strategy — recovered 3 hours of metrics after infrastructure failure</li>
                                     </ul>
@@ -1293,13 +1327,12 @@
                         </div>
                     </div>
 
-                    <!-- Education + Awards -->
                     <div class="fade-up">
                         <h3 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 28px;" data-i18n="edu-label">Education</h3>
                         <div class="edu-card">
                             <h3 data-i18n="edu-degree">B.Tech in Computer Science</h3>
                             <div class="edu-school" data-i18n="edu-school">SRM University, AP</div>
-                            <div class="edu-date" data-i18n="edu-date">Expected 2027 · GPA: 8.68</div>
+                            <div class="edu-date" data-i18n="edu-date">Expected 2027 · GPA: 8.69</div>
                             <ul class="edu-details" style="list-style: disc; padding-left: 18px;">
                                 <li data-i18n="edu-d1">Focus: Backend Systems, Distributed Computing, Machine Learning, Computer Vision, Systems Design</li>
                                 <li data-i18n="edu-d2">Ongoing research in Lyapunov-constrained RL for latency-bounded edge inference under Dr. Raushan Kumar Singh</li>
@@ -1315,7 +1348,6 @@
             </div>
         </section>
 
-        <!-- ===== SKILLS ===== -->
         <section id="skills" class="section">
             <div class="container">
                 <div class="section-header fade-up">
@@ -1334,13 +1366,13 @@
                     <div class="skill-card">
                         <div class="skill-card-icon"><i class="fas fa-database"></i></div>
                         <h3 data-i18n="sk2-title">Data Layer</h3>
-                        <p data-i18n="sk2-desc">PostgreSQL, Redis, Kafka, FAISS (vector search), MongoDB, SQLModel/Alembic, structured logging, Prometheus, Grafana</p>
+                        <p data-i18n="sk2-desc">PostgreSQL, Redis, Kafka, FAISS &amp; Qdrant (vector databases), MongoDB, SQLModel/Alembic, structured logging, Prometheus, Grafana</p>
                     </div>
 
                     <div class="skill-card">
                         <div class="skill-card-icon"><i class="fas fa-brain"></i></div>
                         <h3 data-i18n="sk3-title">ML / AI Layer</h3>
-                        <p data-i18n="sk3-desc">PyTorch, HuggingFace Transformers &amp; Diffusers, CLIP, YOLO, Ollama (local LLM serving), model versioning, RAG pipelines, FAISS retrieval</p>
+                        <p data-i18n="sk3-desc">PyTorch, ONNX Runtime, HuggingFace Transformers &amp; Diffusers, CLIP, YOLO, Ollama (local LLM serving), RAG pipelines, differential privacy</p>
                     </div>
 
                     <div class="skill-card">
@@ -1352,12 +1384,11 @@
 
                 <div style="margin-top: 24px; padding: 20px 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);" class="fade-up">
                     <h3 style="font-size: 14px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;" data-i18n="sk-lang-label">Languages</h3>
-                    <p style="font-size: 14px; color: var(--text-secondary);" data-i18n="sk-lang-desc">Python (production-grade) · Go (backend services) · C++ (performance-critical paths) · SQL (analytics & ETL)</p>
+                    <p style="font-size: 14px; color: var(--text-secondary);" data-i18n="sk-lang-desc">Python (production-grade) · Go (backend services) · C++ (performance-critical paths) · SQL (analytics &amp; ETL)</p>
                 </div>
             </div>
         </section>
 
-        <!-- ===== ABOUT ===== -->
         <section id="about" class="section">
             <div class="container">
                 <div class="section-header fade-up">
@@ -1379,11 +1410,13 @@
                         </div>
                         <div class="interest-item">
                             <div class="interest-icon"><i class="fas fa-language"></i></div>
-                            <span><strong data-i18n="about-i2-label">Languages:</strong> <span data-i18n="about-i2-text">Preparing for JLPT N2 (Japanese)</span></span>
-                        </div>
+<span>
+  <strong data-i18n="about-i2-label">Languages:</strong>
+  <span data-i18n="about-i2-text">Japanese (JLPT N5 passed, currently at N4 level, targeting N2)</span>
+</span>                        </div>
                         <div class="interest-item">
                             <div class="interest-icon"><i class="fas fa-robot"></i></div>
-                            <span><strong data-i18n="about-i3-label">Interests:</strong> <span data-i18n="about-i3-text">Japan's AI & robotics ecosystem, cross-cultural tech collaboration</span></span>
+                            <span><strong data-i18n="about-i3-label">Interests:</strong> <span data-i18n="about-i3-text">Japan's AI &amp; robotics ecosystem, cross-cultural tech collaboration</span></span>
                         </div>
                         <div class="interest-item">
                             <div class="interest-icon"><i class="fas fa-cogs"></i></div>
@@ -1394,7 +1427,6 @@
             </div>
         </section>
 
-        <!-- ===== CONTACT ===== -->
         <section id="contact" class="section contact-section">
             <div class="container">
                 <div class="section-header fade-up">
@@ -1422,14 +1454,12 @@
 
     </main>
 
-    <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container">
             <p data-i18n="footer-copy">&copy; 2026 Malladi Sairam Karthik</p>
         </div>
     </footer>
 
-    <!-- ===== SCRIPTS ===== -->
     <script>
         // Mobile nav toggle
         const navToggle = document.getElementById('navToggle');
@@ -1521,19 +1551,19 @@
             // Projects Section
             'proj-label': '構築したシステム',
             'proj-title': 'プロジェクト',
-            'proj-subtitle': 'トレードオフを文書化し、測定可能な成果を持つ本番志向のシステム。',
-            // Project 1: Event Analytics Platform
-            'p1-title': 'イベント分析プラットフォーム — 障害分離を備えたイベント駆動型パイプライン',
-            'p1-ctx': '個人プロジェクト · Go + Kafka + PostgreSQL',
-            'p1-desc': '障害時の正確性を重視した本番グレードのイベント駆動型データ取り込みパイプライン。冪等な永続化によるat-least-onceデリバリ、インテリジェントなエラー分類、指数バックオフ付きリトライ、DLQ分離を実装。手動Kafkaオフセット制御によるクラッシュセーフ保証付き。',
-            'p1-h1': 'at-least-onceデリバリ：手動オフセットコミット——DB書き込みまたはDLQルーティング成功後のみコミット。コンシューマ再起動時にコミットされていないメッセージを再配信',
-            'p1-h2': 'INSERT ... ON CONFLICT DO NOTHINGによる冪等な永続化——重複リプレイが安全に処理される設計',
-            'p1-h3': 'インテリジェントなエラー分類：一時的（指数バックオフ+ジッター）、永続的（即時DLQルーティング）、不明（データ損失防止のため一時的として処理）',
-            'p1-h4': 'フォレンジックメタデータ付きDLQ：元のキー/値/オフセット、エラー分類、リトライ回数、障害タイムスタンプを記録',
-            'p1-rv1': '27', 'p1-rl1': 'テスト通過',
-            'p1-rv2': '3', 'p1-rl2': 'エラークラス',
-            'p1-rv3': 'クラッシュセーフ', 'p1-rl3': 'シャットダウン処理',
-            'p1-rv4': 'At-least-once', 'p1-rl4': 'デリバリ保証',
+            'proj-subtitle': 'トレードオフを文書化し、エンタープライズ情報保護法に準拠した測定可能な成果を持つ本番志向システム。',
+            // Project 1: Kizuna (New Edge Privacy Engine)
+            'p1-title': 'Kizuna — マルチモーダル・プライバシー保護エッジAI基盤',
+            'p1-ctx': '個人・研究プロジェクト · ONNX Runtime + Docker + Qdrant / FAISS',
+            'p1-desc': '生のセンサーデータ（映像・音声・環境データ）をクラウドへ送信できない環境向けに設計されたプライバシー保護型エッジAI基盤。エッジ側で異種データ流を匿名化されたベクトル埋め込みへと変換し、差分プライバシーの適用と生データの即時破棄により、APPI（日本の個人情報保護法）への完全準拠を実現。',
+            'p1-h1': 'エッジネイティブ埋め込みアーキテクチャ：量子化ONNX Runtimeモデルを活用し、映像・音声・モーションデータをローカルで統合マルチモーダル埋め込み空間へ変換',
+            'p1-h2': '生データ外部流出ゼロ：埋め込み処理後、生ファイルは即座にメモリから抹消。ローカルのQdrant/FAISSデータベースに対して匿名ベクトルのみを照会',
+            'p1-h3': 'リアルタイム類似度＆異常検知：クラウドの通信遅延や外部サービス依存なしにベクトル類似度検索を実行し、業務上の異常を検知',
+            'p1-h4': 'APPI準拠プライバシーレイヤー：日本企業の厳格なセキュリティ基準を想定した差分プライバシーノイズ注入およびメモリ消去メカニズムを実装',
+            'p1-rv1': 'エッジネイティブ', 'p1-rl1': 'デプロイメント',
+            'p1-rv2': 'クラウドゼロ', 'p1-rl2': 'データ外部流出',
+            'p1-rv3': 'APPI準拠', 'p1-rl3': 'プライバシー保護',
+            'p1-rv4': 'INT8量子化', 'p1-rl4': 'ONNX高速推論',
             // Project 2: Risk Scoring
             'p2-title': 'コンテンツリスクスコアリングサービス — グレースフルデグラデーション付きステートレス推論',
             'p2-ctx': '個人プロジェクト · FastAPI + Kubernetes + Prometheus',
@@ -1546,30 +1576,42 @@
             'p2-rv2': 'CI/CDゲート', 'p2-rl2': 'モデルリリース',
             'p2-rv3': 'グレースフル', 'p2-rl3': 'デグラデーション',
             'p2-rv4': '可観測', 'p2-rl4': '全障害モード',
-            // Project 3: AI Studio Cam
-            'p3-title': 'AIスタジオカム — セマンティックメモリとランタイムモデル切替を備えたリアルタイムビジョンサービス',
-            'p3-ctx': '研究プロジェクト · Anirban Bhar博士指導',
-            'p3-desc': 'デュアルモデル検出、CLIPベースのセマンティック検索（FAISSベクトルインデックス）、音声駆動インタラクションを備えたリアルタイムAIビジュアルメモリシステム。YOLOv8（80+クラス）とカスタムCNN（10専門クラス）間のランタイムモデルホットスワップをサービス再起動なしでサポート。',
-            'p3-h1': 'デュアルモデルサポート：一般検出用YOLOv8 + 専門クラス用カスタムCNN——再起動なしにランタイムで切替可能',
-            'p3-h2': 'CLIPベースのセマンティックメモリ（FAISSインデックス）：自然言語クエリ（「赤いカップのようなものを見せて」）と時間ベースの検索をサポート',
-            'p3-h3': 'Whisper STT + TTSによる完全な音声インターフェース：ハンズフリーでオブジェクト検索、スナップショット取得、モデル切替、メモリ管理が可能',
-            'p3-h4': 'Optunaハイパーパラメータ最適化、データ拡張、混同行列評価、自動モデル保存を含むCNN学習パイプライン',
-            'p3-rv1': '30–70ms', 'p3-rl1': '推論レイテンシ',
-            'p3-rv2': '94%', 'p3-rl2': 'mAP精度',
-            'p3-rv3': 'セマンティック', 'p3-rl3': 'ビジュアル検索',
-            'p3-rv4': '音声駆動', 'p3-rl4': 'インタラクション',
-            // Project 5: Japanese Language Trainer
-            'p5-title': 'オフラインAI日本語学習トレーナー — ローカルLLMチューター付きフルスタックSRSアプリ',
-            'p5-ctx': '個人プロジェクト · FastAPI + PostgreSQL + Ollama',
-            'p5-desc': '完全オフライン・プライバシー優先の日本語学習アプリケーション。SM-2間隔反復をスクラッチから実装、JLPT語彙・漢字ブラウザ（N5〜N1）を完備、ローカルLLaMA 3.1 70B推論による5モードAIチューター搭載。クラウド依存ゼロ。',
-            'p5-h1': 'SM-2間隔反復エンジン（スクラッチ実装）：Again/Hard/Good/Easyグレーディング、1日の新カード上限、ストリーク追跡、全JLPTレベルのマスタリー進行管理',
-            'p5-h2': '5モードAIチューター（TEACH · QUIZ · EXPLAIN · CORRECT · CHAT）——単純な翻訳を意図的に拒否し、インタラクションを通じて教育',
-            'p5-h3': '非同期FastAPIバックエンド：15+のRESTfulエンドポイント、SSEストリーミングAIレスポンス、Alembicマイグレーション、SQLModel ORM',
-            'p5-h4': 'Piper TTSによるオフライン日本語発音、7日間レビュー予測とレベル別マスタリーメトリクス付きダッシュボード',
-            'p5-rv1': '15+', 'p5-rl1': 'APIエンドポイント',
-            'p5-rv2': 'SM-2', 'p5-rl2': 'SRSエンジン',
-            'p5-rv3': '5モード', 'p5-rl3': 'AIチューター',
-            'p5-rv4': '完全オフライン', 'p5-rl4': 'アーキテクチャ',
+            // Project 3: Event Analytics Platform
+            'p3-title': 'イベント分析プラットフォーム — 障害分離を備えたイベント駆動型パイプライン',
+            'p3-ctx': '個人プロジェクト · Go + Kafka + PostgreSQL',
+            'p3-desc': '障害時の正確性を重視した本番グレードのイベント駆動型データ取り込みパイプライン。冪等な永続化によるat-least-onceデリバリ、インテリジェントなエラー分類、指数バックオフ付きリトライ、DLQ分離を実装。手動Kafkaオフセット制御によるクラッシュセーフ保証付き。',
+            'p3-h1': 'at-least-onceデリバリ：手動オフセットコミット——DB書き込みまたはDLQルーティング成功後のみコミット。コンシューマ再起動時にコミットされていないメッセージを再配信',
+            'p3-h2': 'INSERT ... ON CONFLICT DO NOTHINGによる冪等な永続化——重複リプレイが安全に処理される設計',
+            'p3-h3': 'インテリジェントなエラー分類：一時的（指数バックオフ+ジッター）、永続的（即時DLQルーティング）、不明（データ損失防止のため一時的として処理）',
+            'p3-h4': 'フォレンジックメタデータ付きDLQ：元のキー/値/オフセット、エラー分類、リトライ回数、障害タイムスタンプを記録',
+            'p3-rv1': '27', 'p3-rl1': 'テスト通過',
+            'p3-rv2': '3', 'p3-rl2': 'エラークラス',
+            'p3-rv3': 'クラッシュセーフ', 'p3-rl3': 'シャットダウン処理',
+            'p3-rv4': 'At-least-once', 'p3-rl4': 'デリバリ保証',
+            // Project 4: Session Adaptive News Recommendation System (Added for Meidensha BI/Data)
+            'p4-title': 'セッション適応型ニュース分析・推薦データエンジン — 高速ベクトル検索＆ランキング',
+            'p4-ctx': '個人プロジェクト · FastAPI + FAISS + LightGBM + Redis',
+            'p4-desc': '約16万件の大規模記事データを対象とした、AI活用型データ検索・推薦パイプライン。社内情報民主化を見据え、ユーザーのセッション内行動パターンに応じてコンテンツランキングを動的に適応。RedisキャッシュとFAISSベクトル検索を駆使し、P99レイテンシ150ms以下の厳格な制約を実現。',
+            'p4-h1': '16万件超のデータ検索エンジン：FAISSベクトル類似度検索を実装し、行動セッションデータからTop-100候補記事を即時抽出',
+            'p4-h2': '動的LightGBMランキングパイプライン：クリック・閲覧履歴に対するリアルタイム特徴量生成を実行し、個別化されたスコアリングを提供',
+            'p4-h3': 'P99レイテンシ150ms以下アーキテクチャ：非同期FastAPIとRedisインメモリキャッシュを結合したデータ配信層によりDBボトルネックを解消',
+            'p4-h4': '4種類の統合推薦戦略：協調フィルタリング、コンテンツ類似度、時間減衰インタラクション、人気度ベースラインを融合',
+            'p4-rv1': '16万件超', 'p4-rl1': 'インデックスデータ',
+            'p4-rv2': '150ms以下', 'p4-rl2': 'P99レイテンシ',
+            'p4-rv3': '4戦略統合', 'p4-rl3': '適応型ランキング',
+            'p4-rv4': 'FAISS+Redis', 'p4-rl4': '高速検索基盤',
+            // Project 5: KAI (Standalone Enterprise DX Assistant)
+            'p5-title': 'KAI — プライバシー考慮型オフラインAIアシスタント',
+            'p5-ctx': '個人プロジェクト · Python + Whisper + ローカルLLM + ベクトルストレージ',
+            'p5-desc': 'プライバシー保護を重視したオフラインAIアシスタント。音声・テキスト入力を活用したマルチモーダル対話環境を構築し、外部クラウドサービスへの依存を排除。企業の機密情報漏洩リスクを抑え、安全な業務DX推進を実現するAI活用システムを設計。',
+            'p5-h1': 'マルチモーダル入力処理：Whisperによる音声認識およびビジョンモデルを統合し、ハンズフリーでの対話と文書情報検索を実現',
+            'p5-h2': '完全ローカルAI推論：デバイス上でLLM推論を完結させ、外部クラウドAPIへのデータ送信および機密情報漏洩をゼロに抑制',
+            'p5-h3': 'ローカルコンテキストメモリ：外部DBに依存せず、デバイス内ベクトルストレージを活用した継続的な文脈保持と情報検索を実装',
+            'p5-h4': '企業DX導入に準拠：厳格なプライバシー要件が求められる環境下における生成AIアシスタントの業務適用・実用性を検証したシステム設計',
+            'p5-rv1': 'クラウドゼロ', 'p5-rl1': 'データ外部流出',
+            'p5-rv2': '音声 / テキスト', 'p5-rl2': 'マルチモーダル対話',
+            'p5-rv3': 'ローカル保持', 'p5-rl3': 'コンテキストメモリ',
+            'p5-rv4': 'プライバシー優先', 'p5-rl4': '業務DX適用性',
             // Experience
             'exp-label': '経歴',
             'exp-title': '経験と学歴',
@@ -1597,7 +1639,7 @@
             'edu-label': '学歴',
             'edu-degree': 'コンピュータサイエンス学士（B.Tech）',
             'edu-school': 'SRM University, AP',
-            'edu-date': '2027年卒業予定 · GPA: 8.68',
+            'edu-date': '2027年卒業予定 · GPA: 8.69',
             'edu-d1': '専攻：バックエンドシステム、分散コンピューティング、機械学習、コンピュータビジョン、システム設計',
             'edu-d2': 'Raushan Kumar Singh博士の指導の下、レイテンシ制約エッジ推論のためのリアプノフ制約RLを研究中',
             'award-title': '金メダル — TOMIDAI Global Sci Frontiers',
@@ -1609,9 +1651,9 @@
             'sk1-title': 'アプリケーションレイヤー',
             'sk1-desc': 'FastAPI、API設計、非同期処理、SSEストリーミング、冪等性パターン、リトライポリシー、DLQハンドリング',
             'sk2-title': 'データレイヤー',
-            'sk2-desc': 'PostgreSQL、Redis、Kafka、FAISS（ベクトル検索）、MongoDB、SQLModel/Alembic、構造化ログ、Prometheus、Grafana',
+            'sk2-desc': 'PostgreSQL、Redis、Kafka、FAISS ＆ Qdrant（ベクトルDB）、MongoDB、SQLModel/Alembic、構造化ログ、Prometheus、Grafana',
             'sk3-title': 'ML / AIレイヤー',
-            'sk3-desc': 'PyTorch、HuggingFace Transformers & Diffusers、CLIP、YOLO、Ollama（ローカルLLMサービング）、モデルバージョニング、RAGパイプライン、FAISS検索',
+            'sk3-desc': 'PyTorch、ONNX Runtime、HuggingFace Transformers & Diffusers、CLIP、YOLO、Ollama（ローカルLLMサービング）、RAGパイプライン、差分プライバシー',
             'sk4-title': 'インフラストラクチャ',
             'sk4-desc': 'Docker、Kubernetes、CI/CDパイプライン、ヘルス/レディネスプローブ、Prometheusメトリクス、Linux、Git、クラッシュセーフシャットダウンパターン',
             'sk-lang-label': '言語',
