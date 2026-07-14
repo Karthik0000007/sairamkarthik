@@ -4,7 +4,7 @@
 
 Single-page portfolio website built as a static HTML artifact. No frameworks, no build step, no JavaScript dependencies — one file, production-ready.
 
-**Live:** [sairamkarthik.vercel.app](https://sairamkarthik.vercel.app) &nbsp;|&nbsp; **Source:** [github.com/Karthik0000007/portfolio](https://github.com/Karthik0000007/portfolio)
+**Live:** [sairamkarthik.vercel.app](https://sairamkarthik.vercel.app) &nbsp;|&nbsp; **Source:** [github.com/Karthik0000007/sairamkarthik](https://github.com/Karthik0000007/sairamkarthik)
 
 ---
 
